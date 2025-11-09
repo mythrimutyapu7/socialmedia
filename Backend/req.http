@@ -1,0 +1,37 @@
+
+GET http://localhost:5001/
+
+###  Register new user
+POST http://localhost:5001/api/auth/register
+Content-Type: application/json
+
+{
+  "name": "Mythri",
+  "email": "mythri@example.com",
+  "password": "123456"
+}
+
+### Login existing user
+POST http://localhost:5001/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "mythri@example.com",
+  "password": "123456"
+}
+
+### Create a post (replace <TOKEN> with token from login response)
+POST http://localhost:5001/api/posts
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MGYxMDljM2NlY2EyMDNiNjgyNTIzOSIsIm5hbWUiOiJNeXRocmkiLCJpYXQiOjE3NjI1OTcxMjMsImV4cCI6MTc2MzIwMTkyM30.FQew1BdjN6QYWm8mOUwOFAf_k48DJL4jsVXYpzjZ0Eg
+
+{
+  "text": "Hello from my backend! First post."
+}
+
+### Get all posts
+GET http://localhost:5001/api/posts
+
+### 🗑 Delete a post (replace <POST_ID> and <TOKEN>)
+DELETE http://localhost:5001/api/posts/690f190f400b5ebdd766a839
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MGYxMDljM2NlY2EyMDNiNjgyNTIzOSIsIm5hbWUiOiJNeXRocmkiLCJpYXQiOjE3NjI1OTcxNzIsImV4cCI6MTc2MzIwMTk3Mn0.kgQsCPcPr4G-KZEshaWu9Q7F6u3wEP_XdQ_0fo_ZrkU

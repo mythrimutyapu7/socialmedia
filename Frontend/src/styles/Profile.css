@@ -1,0 +1,530 @@
+/* 🌈 Modern Glassmorphism Profile Page - Full Width Version */
+
+.profile-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eef2ff, #fdf2f8);
+  font-family: "Inter", sans-serif;
+  color: #1f2937;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 🧭 Navbar */
+.profile-navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 0.9rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+.profile-navbar h1 {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #1e3a8a;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.profile-navbar h1:hover {
+  color: #2563eb;
+}
+
+.nav-buttons button {
+  margin-left: 0.75rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s ease-in-out;
+}
+
+.post-btn {
+  background: linear-gradient(90deg, #f472b6, #ec4899);
+  color: #fff;
+}
+
+.logout-btn {
+  background: linear-gradient(90deg, #f87171, #ef4444);
+  color: #fff;
+}
+
+/* 🧍‍♀️ Main layout */
+.profile-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 7rem 5rem 3rem;
+  gap: 3rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Left - Profile Info */
+.profile-card {
+  flex: 0.35;
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  height: fit-content;
+  position: sticky;
+  top: 8rem;
+}
+
+.profile-avatar {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: #fff;
+  margin: 0 auto 1rem;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+}
+
+.profile-name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.profile-email,
+.profile-joined {
+  font-size: 0.95rem;
+  color: #4b5563;
+  margin-top: 0.4rem;
+}
+
+.profile-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.stat-box p:first-child {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1e3a8a;
+}
+
+.stat-box p:last-child {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* Right - Posts Section */
+.my-posts {
+  flex: 0.65;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  padding: 2rem 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  height: 75vh;
+  overflow-y: auto;
+}
+
+.my-posts h3 {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #1f2937;
+}
+
+.post-card {
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 16px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: 0.2s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-2px);
+}
+
+.post-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-top: 0.8rem;
+  height: 230px;
+  object-fit: cover;
+}
+
+.post-delete {
+  color: #dc2626;
+  font-size: 0.85rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.post-delete:hover {
+  color: #b91c1c;
+}
+
+.no-posts {
+  text-align: center;
+  color: #4b5563;
+  font-size: 0.95rem;
+}
+/* 📱 Responsive adjustments */
+@media (max-width: 1024px) {
+  .profile-content {
+    padding: 6rem 2rem;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .profile-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-card,
+  .my-posts {
+    width: 90%;
+    max-width: 600px;
+  }
+
+  .profile-card {
+    position: static;
+  }
+
+  .my-posts {
+    height: auto;
+    max-height: none;
+    overflow: visible;
+  }
+}
+
+@media (max-width: 600px) {
+  .profile-avatar {
+    width: 90px;
+    height: 90px;
+    font-size: 1.8rem;
+  }
+
+  .profile-name {
+    font-size: 1.3rem;
+  }
+
+  .profile-stats {
+    gap: 1rem;
+  }
+
+  .post-card img {
+    height: 180px;
+  }
+
+  .profile-content {
+    padding: 5rem 1rem;
+  }
+}
+/* 🌸 Profile Post Card Styling */
+.profile-post-card {
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 16px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: 0.25s ease;
+  overflow: hidden;
+}
+
+.profile-post-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.12);
+}
+
+/* Header (username + delete) */
+.profile-post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-post-username {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.profile-post-date {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+/* 🗑️ Delete Button */
+.profile-post-delete {
+  background: none;
+  border: none;
+  color: #ef4444;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.profile-post-delete:hover {
+  color: #dc2626;
+  transform: scale(1.05);
+}
+
+/* 🖼️ Image Wrapper */
+.profile-post-image-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 0.8rem;
+}
+
+.profile-post-image {
+  width: 100%;
+  max-width: 460px;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.6);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.profile-post-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+}
+
+.profile-post-text {
+  margin-top: 0.8rem;
+  color: #374151;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* 🌈 Overall Page Layout */
+.profile-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eef2ff, #fdf2f8);
+  font-family: "Inter", sans-serif;
+  color: #1f2937;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 7rem 2rem 3rem;
+}
+
+.profile-content {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 1100px;
+  margin-left: 400px;
+}
+
+
+/* 🩵 Profile Info Card (Left) */
+.profile-card {
+  flex: 0.35;
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 6rem;
+  align-self: flex-start;
+}
+
+.profile-avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #fff;
+  margin: 0 auto 1rem;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+}
+
+.profile-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.profile-email {
+  font-size: 0.95rem;
+  color: #4b5563;
+  margin-top: 0.3rem;
+}
+
+.profile-joined {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-top: 0.2rem;
+}
+
+.profile-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.stat-box p:first-child {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1e3a8a;
+}
+
+.stat-box p:last-child {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* 🧾 Posts Section (Right) */
+.my-posts {
+  flex: 0.65;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  padding: 2rem 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  min-height: 80vh;
+  overflow-y: auto;
+}
+
+.my-posts h3 {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #1e3a8a;
+  font-size: 1.4rem;
+}
+
+/* 🌸 Each Post Card */
+.profile-post-card {
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 16px;
+  padding: 1.4rem 1.6rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: 0.25s ease;
+}
+
+.profile-post-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.12);
+}
+
+/* Header */
+.profile-post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-post-username {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.profile-post-date {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+/* Delete Button */
+.profile-post-delete {
+  background: none;
+  border: none;
+  color: #ef4444;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.profile-post-delete:hover {
+  color: #dc2626;
+  transform: scale(1.05);
+}
+
+/* Image */
+.profile-post-image-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 0.8rem;
+}
+
+.profile-post-image {
+  width: 100%;
+  max-width: 520px;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.6);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.profile-post-text {
+  margin-top: 0.8rem;
+  color: #374151;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* 📱 Responsive */
+@media (max-width: 900px) {
+  .profile-page {
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 1.5rem;
+  }
+
+  .profile-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .profile-card,
+  .my-posts {
+    width: 90%;
+    max-width: 650px;
+  }
+
+  .my-posts {
+    padding: 1.8rem;
+  }
+}
+
