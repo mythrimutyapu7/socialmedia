@@ -40,7 +40,7 @@ mongoose
   .then(() => console.log('MongoDB connected ✅'))
   .catch((err) => console.error('DB connection error:', err.message));
 
-// ✅ Local server only (for development)
+// ✅ Local dev server
 if (process.env.NODE_ENV !== 'production') {
   const PORT = process.env.PORT || 5000;
   app.listen(PORT, () =>
@@ -48,5 +48,7 @@ if (process.env.NODE_ENV !== 'production') {
   );
 }
 
-// ✅ Vercel requires this:
-module.exports = app;
+// ✅ Export handler for Vercel
+module.exports = (req, res) => {
+  return app(req, res);
+};
